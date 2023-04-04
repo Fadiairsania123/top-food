@@ -7,6 +7,7 @@ use App\Models\Resto;
 use App\Models\Menu;
 use App\Models\Cart;
 use App\Models\Checkout;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -21,7 +22,11 @@ class HomeController extends Controller
     {
         $data = Resto::with(['menu'])
         ->where('id',$id)->first();
-        return view("detail",compact('data')); 
+        $rating = Review::with(['menu','user'])
+        ->whereHas('menu', function ($query) use ($id) {
+            return $query->where('id_resto', '=', $id);
+        })->get();
+        return view("detail",compact('data','rating')); 
     }
 
     public function addToCart(Request $request)
@@ -118,5 +123,24 @@ class HomeController extends Controller
     {
         $data = Cart::with(['menu'])->where('id_transaction',$id)->get();
         return view("transaction_detail",compact('data')); 
+    }
+
+    public function addRating($id)
+    {
+        $data = Cart::with(['menu','menu.rating'])->where('id_transaction',$id)->whereHas('menu.rating', function ($query) {
+            return $query->where('id_user', '=', Auth::user()->id);
+        })->get();
+        return view("rating",compact('data')); 
+    }
+
+    public function editRating(Request $request)
+    {
+        $data = Review::updateOrCreate([
+            'id_user' => Auth::user()->id,
+            'id_menu' => $request->id,
+            ],
+            ['value' => $request->val]
+        );
+        return response()->json(['success'=>'Sukses memasukan rating.']);
     }
 }

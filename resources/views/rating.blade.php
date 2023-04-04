@@ -26,7 +26,60 @@
 
     <link href="{{ asset('') }}css/tooplate-clean-work.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    
+    <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+    <style>
+        .container-wrapper {
+            background-color: #EDF0F9;
+        }
+
+
+
+        .rating-wrapper {
+            align-self: center;
+            box-shadow: 7px 7px 25px rgba(198, 206, 237, 0.7), -7px -7px 35px rgba(255, 255, 255, 0.7), inset 0px 0px 4px rgba(255, 255, 255, 0.9), inset 7px 7px 15px rgba(198, 206, 237, 0.8);
+            border-radius: 5rem;
+            display: inline-flex;
+            direction: rtl !important;
+            padding: 0.1rem 0.5rem;
+            margin-left: auto;
+        }
+
+        .rating-wrapper label {
+            color: #E1E6F6;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 3rem;
+            padding: 1rem 0.6rem;
+            transition: color 0.5s;
+        }
+
+        .rating-wrapper svg {
+            -webkit-text-fill-color: transparent;
+            -webkit-filter: drop-shadow 4px 1px 6px #c6ceed;
+            filter: drop-shadow(5px 1px 3px #c6ceed);
+        }
+
+        .rating-wrapper input {
+            height: 100%;
+            width: 100%;
+        }
+
+        .rating-wrapper input {
+            display: none;
+        }
+
+        .rating-wrapper label:hover,
+        .rating-wrapper label:hover~label,
+        .rating-wrapper input:checked~label {
+            color: #e6e200;
+        }
+
+        .rating-wrapper label:hover,
+        .rating-wrapper label:hover~label,
+        .rating-wrapper input:checked~label {
+            color: #e6e200;
+        }
+    </style>
 </head>
 
 <body>
@@ -115,7 +168,7 @@
                 <div class="row">
 
                     <div class="col-lg-7 col-12">
-                        <h1 class="text-white mb-lg-0">Transaction</h1>
+                        <h1 class="text-white mb-lg-0">Rating</h1>
                     </div>
 
 
@@ -128,31 +181,46 @@
             <div class="container">
                 <div class="row">
                     <div class="col consulting-form shadow-lg">
+                    <a href="{{ route('transaction') }}" class="btn btn-success button">Back</a>
                         <table class="table">
-                            <tr>
-                                <td>No</td>
-                                <td>ID Transaksi</td>
-                                <td>Pembayaran</td>
-                                <td>Tanggal</td>
-                                <td style="width: 250px">Alamat</td>
-                                <td>Status</td>
-                                <td>Detail</td>
-                            </tr>
                             @foreach ($data as $key => $item)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->pembayaran }}</td>
-                                    <td>{{ $item->created_at }}</td>
-                                    <td>{{ $item->alamat }}</td>
-                                    <td>{{ $item->status }}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{ $key + 1 }}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{ $item->menu->makanan }}</td>
                                     <td>
-                                        <a class="btn-success btn button"
-                                            href="{{ route('transaction.detail', $item->id) }}">Detail</a>
-                                        @if ($item->status == 'DIKIRIM')
-                                            <a class="btn-primary btn button rating"
-                                                href="{{ route('addrating',$item->id) }}">Kasih Rating</a>
-                                        @endif
+                                        <div class="rating-wrapper">
+
+                                            <!-- star 5 -->
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 5 ? 'checked' : '' }} id="5-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="5">
+                                            <label for="5-star-rating-{{ $item->menu->id }}" class="star-rating">
+                                                <i class="fas fa-star fa-xs"></i>
+                                            </label>
+                
+                                            <!-- star 4 -->
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 4 ? 'checked' : '' }} id="4-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="4">
+                                            <label for="4-star-rating-{{ $item->menu->id }}" class="star-rating star">
+                                                <i class="fas fa-star fa-xs"></i>
+                                            </label>
+                
+                                            <!-- star 3 -->
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 3 ? 'checked' : '' }} id="3-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="3">
+                                            <label for="3-star-rating-{{ $item->menu->id }}" class="star-rating star">
+                                                <i class="fas fa-star fa-xs"></i>
+                                            </label>
+                
+                                            <!-- star 2 -->
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 2 ? 'checked' : '' }} id="2-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="2">
+                                            <label for="2-star-rating-{{ $item->menu->id }}" class="star-rating star">
+                                                <i class="fas fa-star fa-xs"></i>
+                                            </label>
+                
+                                            <!-- star 1 -->
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 1 ? 'checked' : '' }} id="1-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="1">
+                                            <label for="1-star-rating-{{ $item->menu->id }}" class="star-rating star">
+                                                <i class="fas fa-star fa-xs"></i>
+                                            </label>
+                
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -343,7 +411,6 @@
                 </div>
             </div>
         </div>
-
     </footer>
 
     <!-- JAVASCRIPT FILES -->
@@ -358,6 +425,8 @@
     <script src="{{ asset('') }}js/jquery.magnific-popup.min.js"></script>
     <script src="{{ asset('') }}js/magnific-popup-options.js"></script>
     <script src="{{ asset('') }}js/custom.js"></script>
+    <script src='https://use.fontawesome.com/releases/v5.0.2/js/all.js'></script>
+
     <script>
         $.ajaxSetup({
             headers: {
@@ -380,6 +449,21 @@
                     }
                 });
             })
+
+            $('.rating').on('click', function(e) {
+                var val = $(this).val();
+                var id = $(this).data('id');
+
+                $.ajax({
+                    type:'POST',
+                    url:"{{ route('rating.update') }}",
+                    data:{id:id,val:val},
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+            });
+            
         })
     </script>
 </body>

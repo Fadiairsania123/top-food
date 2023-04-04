@@ -54,6 +54,9 @@ Route::post('/checkout',[HomeController::class,'checkout_submit'])->name('checko
 Route::get('/pembayaran',[HomeController::class,'pembayaran'])->name('pembayaran');
 Route::get('/selesai',[HomeController::class,'selesai'])->name('selesai');
 
+Route::get('/rating/{id}',[HomeController::class,'addRating'])->name('addrating');
+Route::post('/rating/update',[HomeController::class,'editRating'])->name('rating.update');
+
 Route::group(['middleware' => ["Login"]], function () {
     Route::get('/transaction',[HomeController::class,'transaction'])->name('transaction');
     Route::get('/transaction/{id}',[HomeController::class,'transaction_detail'])->name('transaction.detail');

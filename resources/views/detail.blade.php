@@ -23,7 +23,9 @@
         <link href="{{ asset('') }}css/magnific-popup.css" rel="stylesheet">
 
         <link href="{{ asset('') }}css/tooplate-clean-work.css" rel="stylesheet">
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />\
+        <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+
     </head>
     
     <body>
@@ -167,7 +169,7 @@
                         <div class="col-lg-6 col-12 border bg-light">
                             <div class="services-thumb bg-light">
                                 <div class="row">
-                                    <div class="col-lg-5 col-md-5 col-12">
+                                    <div class="col-md-5 col-md-5 col-12">
                                         <div class="services-image-wrap">
                                             <a href="services-detail.html">
                                                 <img src="{{ asset('menu/'.$item->image) }}" width="200" class="services-image img-fluid" alt="">
@@ -363,6 +365,31 @@
                     <div class="row justify-content-center align-items-center">
 
                         <div class="col-lg-12 col-12">
+                            <h4 class="partners-section-title bg-white shadow-lg">Rating</h4>
+                        </div>
+
+                        @foreach ($rating as $item)
+                        
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="border bg-light p-3">
+                            {{ $item->user->name }}<br>
+                            {{ $item->menu->makanan }}<br>
+                            @for ($i =  1; $i < $item->value; $i++)
+                            <i class="fas fa-star fa-xs" style="color:#ffd900"></i>
+                            @endfor
+                            </div>
+                        </div>
+                        @endforeach
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <section class="partners-section">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-12 col-12">
                             <h4 class="partners-section-title bg-white shadow-lg">Trusted by companies</h4>
                         </div>
 
@@ -545,6 +572,7 @@
         <script src="{{ asset('') }}js/jquery.magnific-popup.min.js"></script>
         <script src="{{ asset('') }}js/magnific-popup-options.js"></script>
         <script src="{{ asset('') }}js/custom.js"></script>
+        <script src='https://use.fontawesome.com/releases/v5.0.2/js/all.js'></script>
         
         <script>
             $.ajaxSetup({

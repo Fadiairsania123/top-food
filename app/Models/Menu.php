@@ -20,4 +20,9 @@ class Menu extends Model
     {
         return $this->hasMany(Cart::class,'id_menu','id');
     }
+
+    public function rating()
+    {
+        return $this->hasOne(Review::class,'id_menu','id');
+    }
 }
