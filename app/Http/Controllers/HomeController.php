@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Resto;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Cart;
 use App\Models\Checkout;
 use App\Models\Review;
@@ -114,8 +115,12 @@ class HomeController extends Controller
 
     public function transaction()
     {
-        $data = Checkout::where('id_user',Auth::user()->id)
+        $data = Checkout::where('checkouts.id_user',Auth::user()->id)
+        ->leftjoin('carts','carts.id_transaction','checkouts.id')
+        ->leftjoin('reviews','reviews.id_menu','carts.id_menu')
+        ->select('checkouts.*','reviews.value')
         ->get();
+        // dd($data);
         return view("transaction",compact('data')); 
     }
     
@@ -127,9 +132,7 @@ class HomeController extends Controller
 
     public function addRating($id)
     {
-        $data = Cart::with(['menu','menu.rating'])->where('id_transaction',$id)->whereHas('menu.rating', function ($query) {
-            return $query->where('id_user', '=', Auth::user()->id);
-        })->get();
+        $data = Cart::with(['menu','menu.rating'])->where('id_transaction',$id)->get();
         return view("rating",compact('data')); 
     }
 

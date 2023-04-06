@@ -11,4 +11,8 @@ class Checkout extends Model
 
     protected $guard = [];
 
+    public function review()
+    {
+        return $this->hasMany(Review::class,'id_user','id_user');
+    }
 }

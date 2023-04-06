@@ -149,7 +149,7 @@
                                     <td>
                                         <a class="btn-success btn button"
                                             href="{{ route('transaction.detail', $item->id) }}">Detail</a>
-                                        @if ($item->status == 'DIKIRIM')
+                                        @if ($item->status == 'DIKIRIM' && $item->value == null)
                                             <a class="btn-primary btn button rating"
                                                 href="{{ route('addrating',$item->id) }}">Kasih Rating</a>
                                         @endif

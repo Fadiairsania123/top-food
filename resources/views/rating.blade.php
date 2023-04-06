@@ -191,31 +191,31 @@
                                         <div class="rating-wrapper">
 
                                             <!-- star 5 -->
-                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 5 ? 'checked' : '' }} id="5-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="5">
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" id="5-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="5">
                                             <label for="5-star-rating-{{ $item->menu->id }}" class="star-rating">
                                                 <i class="fas fa-star fa-xs"></i>
                                             </label>
                 
                                             <!-- star 4 -->
-                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 4 ? 'checked' : '' }} id="4-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="4">
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" id="4-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="4">
                                             <label for="4-star-rating-{{ $item->menu->id }}" class="star-rating star">
                                                 <i class="fas fa-star fa-xs"></i>
                                             </label>
                 
                                             <!-- star 3 -->
-                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 3 ? 'checked' : '' }} id="3-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="3">
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" id="3-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="3">
                                             <label for="3-star-rating-{{ $item->menu->id }}" class="star-rating star">
                                                 <i class="fas fa-star fa-xs"></i>
                                             </label>
                 
                                             <!-- star 2 -->
-                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 2 ? 'checked' : '' }} id="2-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="2">
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" id="2-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="2">
                                             <label for="2-star-rating-{{ $item->menu->id }}" class="star-rating star">
                                                 <i class="fas fa-star fa-xs"></i>
                                             </label>
                 
                                             <!-- star 1 -->
-                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" {{ $item->menu->rating?->value == 1 ? 'checked' : '' }} id="1-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="1">
+                                            <input type="radio" class="rating" data-id="{{ $item->menu->id }}" id="1-star-rating-{{ $item->menu->id }}" name="star-rating-{{ $item->menu->id }}" value="1">
                                             <label for="1-star-rating-{{ $item->menu->id }}" class="star-rating star">
                                                 <i class="fas fa-star fa-xs"></i>
                                             </label>
