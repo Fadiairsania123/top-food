@@ -23,7 +23,7 @@
         <link href="{{ asset('') }}css/magnific-popup.css" rel="stylesheet">
 
         <link href="{{ asset('') }}css/tooplate-clean-work.css" rel="stylesheet">
-        <meta name="csrf-token" content="{{ csrf_token() }}" />\
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
 
     </head>
