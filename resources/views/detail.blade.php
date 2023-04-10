@@ -131,16 +131,16 @@
 
             <section class="services-detail-section section-padding">
                 <div class="container">
-                    <div class="row">
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
 
-                        <div class="col-lg-6 col-12">
-                            <div class="services-image-wrap">
-                                <img src="{{ asset('resto/'.$data->image) }}" class="services-image img-fluid" alt="">
-                            </div>
-                        </div>
+                        
+                            
+                                <img src="{{ asset('resto/'.$data->image) }}" class="services-image img-fluid" style="width: 200px; object-fit: cover" alt="">
+                            
+                        
 
-                        <div class="col-lg-6 col-12">
-                            <div class="services-info px-4 pt-4">
+                        
+                            <div style="margin-left: 40px">
                                 <h3 class="mb-4"><b>{{ $data->nama }}</h3></b>
                                 {{-- <p>Spesial Lalapan</p> --}}
 
@@ -149,7 +149,7 @@
                                 <p>{{ $data->deskripsi }}</p>
 
                             </div>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -161,18 +161,18 @@
                     <div class="row">
 
                         <div class="col-lg-12 col-12">
-                            <h2 class="mb-4">Menu</h2>
+                            <h2 class="mb-4" style="text-align: center">Menu</h2>
                         </div>
 
+                        <div class="" style="display: flex; justify-content: center; ">
                         @foreach ($data->menu as $item)
-                            
-                        <div class="col-lg-6 col-12 border bg-light">
-                            <div class="services-thumb bg-light">
-                                <div class="row">
-                                    <div class="col-md-5 col-md-5 col-12">
-                                        <div class="services-image-wrap">
+                        <div class="" style="width: 500px; display: flex; flex-direction: row; margin: 0 10px;">
+                            <div class="services-thumb bg-light" style="display: flex; flex-direction: row">
+                                <div class="row" style="display: flex; flex-direction: row;">
+                                    <div class="" style="width: 50%">
+                                        <div class="services-image-wrap" style="width: 100%; height: 100%; object-fit: cover">
                                             <a href="services-detail.html">
-                                                <img src="{{ asset('menu/'.$item->image) }}" width="200" class="services-image img-fluid" alt="">
+                                                <img src="{{ asset('menu/'.$item->image) }}" style="wi" class="services-image img-fluid" alt="">
 
                                                 {{-- <div class="services-icon-wrap">
                                                     <div class="d-flex justify-content-between align-items-center">
@@ -191,15 +191,15 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
-                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
-                                            <h5 class="services-title mb-1 mb-lg-2">
+                                    <div class=""  style="width: 50%;height: 200px;display: flex;flex-direction: column; justify-content: space-between; align-items: stretch">
+                                        <div class="services-info" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between">
+                                            <h6 class="services-title mb-1 mb-lg-2">
                                                 <a class="services-title-link" href="services-detail.html">{{ $item->makanan }}</a>
-                                            </h5>
+                                            </h6>
 
                                             <p>{{ $item->deskripsi }}</p>
 
-                                            <div class="d-flex flex-wrap align-items-center">
+                                            <div class="d-flex flex-wrap align-items-center" style="justify-content: space-between">
                                                 <span class="text-primary">Rp. {{ number_format($item->harga,0,',','.'); }}</span>
 
                                                 <a data-id="{{ $item->id }}" id="cart-{{ $item->id }}" class="btn-success btn button mt-2 ms-auto beli">
@@ -210,14 +210,14 @@
                                                     <i class="bi bi-bag-check iconBeli"></i>
                                                 </a>
                                             </div>
-                                            <br>
-
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                    </div>
 
                     </div>
                 </div>
@@ -374,9 +374,12 @@
                             <div class="border bg-light p-3">
                             {{ $item->user->name }}<br>
                             {{ $item->menu->makanan }}<br>
+                            
                             @for ($i =  1; $i < $item->value; $i++)
                             <i class="fas fa-star fa-xs" style="color:#ffd900"></i>
                             @endfor
+                            <br>
+                            {{ $item->ulasan; }}
                             </div>
                         </div>
                         @endforeach

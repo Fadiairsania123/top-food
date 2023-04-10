@@ -56,6 +56,7 @@ Route::get('/selesai',[HomeController::class,'selesai'])->name('selesai');
 
 Route::get('/rating/{id}',[HomeController::class,'addRating'])->name('addrating');
 Route::post('/rating/update',[HomeController::class,'editRating'])->name('rating.update');
+Route::post('/ulasan', [HomeController::class, 'saveText'])->name('ulasan.store');
 
 Route::group(['middleware' => ["Login"]], function () {
     Route::get('/transaction',[HomeController::class,'transaction'])->name('transaction');

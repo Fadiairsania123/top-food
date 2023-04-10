@@ -10,9 +10,9 @@ class Review extends Model
     use HasFactory;
 
     protected $guard = [];
-
+    
     protected $fillable = [
-        'id_user', 'id_menu', 'value'
+        'id_user', 'id_menu', 'ulasan',  'value'
     ];
 
     public function menu()

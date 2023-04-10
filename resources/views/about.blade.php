@@ -22,6 +22,24 @@
 
         <link href="css/tooplate-clean-work.css" rel="stylesheet">
 
+        <style>
+            .card-cont {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card {
+                border-radius: 20px;
+                margin: 0 10px;
+                transition: .2s all ease-in;
+            }
+
+            .card:hover {
+                transform: scale(1.02);
+            }
+        </style>
+
     </head>
 
     <body>
@@ -85,18 +103,18 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-12">
-                            <img src="images/about/about us.jpg" class="featured-image img-fluid">
+                            <img  style="object-fit: cover;" src="images/about/about us.jpg" class="featured-image img-fluid">
                         </div>
 
                         <div class="col-lg-6 col-12">
                             <div class="featured-block">
                                 <h3 class="mb-4">We do Creative Things for Success</h3>
 
-                                <p>Top Food adalah website yang berdedikasi untuk menjadi jembatan antara pihak restoran yang menyediakan makanan berkualitas tinggi dan lezat dengan pelanggan kami. Baik Anda mencari makan siang yang cepat dan sehat, makan malam yang mengenyangkan, atau camilan yang lezat, kami memiliki semua itu di Top Food. Dengan beragam hidangan kami, pasti ada sesuatu untuk semua orang di Top Food. </a>.</p>
+                                <p style="text-align: justify;text-justify: inter-word;">Top Food adalah website yang berdedikasi untuk menjadi jembatan antara pihak restoran yang menyediakan makanan berkualitas tinggi dan lezat dengan pelanggan kami. Baik Anda mencari makan siang yang cepat dan sehat, makan malam yang mengenyangkan, atau camilan yang lezat, kami memiliki semua itu di Top Food. Dengan beragam hidangan kami, pasti ada sesuatu untuk semua orang di Top Food. </a>.</p>
 
-                                <p>Jadi, mengapa tidak datang dan lihat sendiri mengapa kami menjadi salah satu tujuan makanan terbaik di kota?</p>
+                                <p style="text-align: justify;text-justify: inter-word;">Jadi, mengapa tidak datang dan lihat sendiri mengapa kami menjadi salah satu tujuan makanan terbaik di kota?</p>
 
-                                <a class="custom-btn btn button button--atlas mt-3" href="contact.html">
+                                <a style="text-align: justify;text-justify: inter-word;" class="custom-btn btn button button--atlas mt-3" href="contact.html">
                                     <span>Get in touch</span>
 
                                     <div class="marquee" aria-hidden="true">
@@ -122,44 +140,47 @@
 
                         <div class="col-lg-12 col-12">
                             <h2 class="mb-4" align="center">Team Kelompok 5</h2> <br>
-                            <p align="center">Di Top Food, kami memiliki tim yang terdiri dari anggota yang berpengalaman dan berkualitas tinggi. Setiap anggota tim kami memiliki keahlian khusus di bidangnya masing-masing, dan kami bekerja sama dengan semangat kerjasama dan kolaborasi bersama pihak restoran untuk menciptakan hidangan yang sempurna untuk pelanggan kami.</p><br>
-                            <p align="center">Kami juga memiliki tim layanan pelanggan yang ramah dan terlatih dengan baik, yang selalu siap membantu menjawab pertanyaan dan memberikan saran tentang menu kami. Kami menghargai setiap pelanggan kami dan berusaha untuk memberikan pengalaman makanan yang tak terlupakan setiap kali mereka datang ke Top Food.</p><br>
-                            <p align="center">Kami bangga dengan tim kami yang berdedikasi dan bersemangat, dan kami yakin bahwa kerja sama tim kami yang erat dan keahlian kami dalam memasak akan terus membuat Top Food menjadi salah satu website pemesanan makan terbaik di kota.</p><br>
+                            <p style="text-align: justify;text-justify: inter-word;">Di Top Food, kami memiliki tim yang terdiri dari anggota yang berpengalaman dan berkualitas tinggi. Setiap anggota tim kami memiliki keahlian khusus di bidangnya masing-masing, dan kami bekerja sama dengan semangat kerjasama dan kolaborasi bersama pihak restoran untuk menciptakan hidangan yang sempurna untuk pelanggan kami.</p><br>
+                            <p style="text-align: justify;text-justify: inter-word;">Kami juga memiliki tim layanan pelanggan yang ramah dan terlatih dengan baik, yang selalu siap membantu menjawab pertanyaan dan memberikan saran tentang menu kami. Kami menghargai setiap pelanggan kami dan berusaha untuk memberikan pengalaman makanan yang tak terlupakan setiap kali mereka datang ke Top Food.</p><br>
+                            <p style="text-align: justify;text-justify: inter-word;">Kami bangga dengan tim kami yang berdedikasi dan bersemangat, dan kami yakin bahwa kerja sama tim kami yang erat dan keahlian kami dalam memasak akan terus membuat Top Food menjadi salah satu website pemesanan makan terbaik di kota.</p><br>
                         </div>
 
-                        <div class="card" style="width: 320px; height:500px;">
-                            <img src="images/about/haffas1.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">Haffas Zikri Ariyandi</h6>
-                                <p class="card-text">210635614807</p>
-                                <a href="https://instagram.com/haffas_zikri?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+                        <div class="card-cont">
+
+                            <div class="card" style="width: 320px; height:500px;">
+                                <img src="images/about/haffas1.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Haffas Zikri Ariyandi</h6>
+                                    <p class="card-text">210635614807</p>
+                                    <a href="https://instagram.com/haffas_zikri?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card" style="width: 320px; height:500px;">
-                            <img src="images/about/fadia7.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">Fadia Irsania Putri</h6>
-                                <p class="card-text">210535614803</p>
-                                <a href="https://instagram.com/fadia.irs?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+    
+                            <div class="card" style="width: 320px; height:500px;">
+                                <img src="images/about/fadia7.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Fadia Irsania Putri</h6>
+                                    <p class="card-text">210535614803</p>
+                                    <a href="https://instagram.com/fadia.irs?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card" style="width: 320px; height:500px;">
-                            <img src="images/about/nada5.jpg" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">Anita Qotrun Nada</h6>
-                                <p class="card-text">21053561487</p>
-                                <a href="https://instagram.com/aqnada_olnina?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+    
+                            <div class="card" style="width: 320px; height:500px;">
+                                <img src="images/about/nada5.jpg" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Anita Qotrun Nada</h6>
+                                    <p class="card-text">21053561487</p>
+                                    <a href="https://instagram.com/aqnada_olnina?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="card" style="width: 320px; height:500px;">
-                            <img src="images/about/farda2.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-center">
-                                <h6 class="card-title">Farkhana Farda Z.</h6>
-                                <p class="card-text">210535614873</p>
-                                <a href="https://instagram.com/fardazrani?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+    
+                            <div class="card" style="width: 320px; height:500px;">
+                                <img src="images/about/farda2.jpeg" class="card-img-top" alt="...">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title">Farkhana Farda Z.</h6>
+                                    <p class="card-text">210535614873</p>
+                                    <a href="https://instagram.com/fardazrani?igshid=YmMyMTA2M2Y=" class="btn btn-primary stretched-link">Tampilkan Profil</a>
+                                </div>
                             </div>
                         </div>
                     </div>

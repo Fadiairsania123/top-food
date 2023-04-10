@@ -22,7 +22,113 @@
 
         <link href="css/tooplate-clean-work.css" rel="stylesheet">
 
+        <style>
+            .resto-home {
+                transition: .2s all ease-in-out;
+            }
 
+            .resto-home:hover {
+                transform: scale(1.05);
+            }
+            
+            .service-thumb:hover {
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+            }
+
+            .container-pod {
+                width: inherit;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                padding: 0 40px;
+                display: grid;
+                place-content: center;
+            }
+
+            .card-container {
+                height: 400px;
+                width: 65vw;
+                /* border: 1px solid #ddd; */
+                display: flex;
+                overflow-x: scroll;
+                align-items: center;
+                overflow-y: hidden;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .card-container .card-shoes {
+                max-width: 280px;
+                min-width: 280px;
+                width: 280px;
+                height: 280px;
+                line-height: 100px;
+                text-align: center;
+                /* background-color: #ccc; */
+                box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+                margin: 20px;
+                border-radius: 20px;
+                overflow: hidden;
+                display: grid;
+                place-content: center;
+
+            }
+            .card-shoes{
+                transition: .2s all ease-in-out;
+            }
+
+
+            .card-shoes .img {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 200px;
+                height: 200px;
+            }
+            .card-shoes .img img{
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .card-shoes:hover {
+                transform: scale(1.02);
+            }
+
+            .card-container.active {
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+            }
+            .card-container.active {
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+            }
+
+            #style-2::-webkit-scrollbar-track
+            {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+                border-radius: 10px;
+                background-color: #f5f5f500;
+            }
+
+            #style-2::-webkit-scrollbar
+            {
+                width: 6px;
+                height: 12px;
+                background-color: #f5f5f500;
+            }
+
+            #style-2::-webkit-scrollbar-thumb
+            {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+                background-color: #0000005d;
+            }
+
+            .intro-section {
+                padding-bottom: 50px;
+            }
+        </style>
     </head>
     
     <body>
@@ -60,7 +166,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/newlogo.png" class="logo img-fluid" alt="">
+                    <img src="images/newlogo.png" class="logo" alt="">
 
                     <span class="ms-2">TOP FOOD</span>
                 </a>
@@ -165,7 +271,7 @@
 
                         @foreach ($data as $item)
                             
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-6 col-12  resto-home">
                             <div class="services-thumb">
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-12">
@@ -229,71 +335,55 @@
                 <div class="container">
                     <div class="row">
 
+                        
+
                         <div class="col-lg-12 col-12 text-center">
                             <h2 class="text-white mb-4">Hot Deals Food!</h2>
                         </div>
-                        <section class="partners-section">
+                        <section class="partners-section" style="margin-top: -40px;">
                             <div class="container">
-                                <div class="row justify-content-center align-items-center">
-            
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food1.jpg" class="team-image img-fluid"><br>
-                                        <p>Indonesia</p>
-                                    </div>
-            
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food2.jpg" class="team-image img-fluid"><br>
-                                        <p>Jepang</p>
-                                    </div>
-            
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food3.jpg" class="team-image img-fluid"><br>
-                                        <p>Korea</p>
-                                    </div>
-            
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food1.jpg" class="team-image img-fluid"><br>
-                                        <p>China</p>
-                                    </div>
-            
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food2.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food3.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div> <br>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food1.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food2.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food3.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food1.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food2.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
-                                    </div>
-
-                                    <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4">
-                                        <img src="images/about/food1.jpg" class="team-image img-fluid"><br>
-                                        <p>India</p>
+                                <div class="container-pod" style="place-content: unset; display: unset; display: flex; align-items: center; margin-top: 40px; flex-direction: column; height: unset; padding: 50px 0;">
+                           
+                                    <div class="card-container" id="style-2">
+                                        <div class="card-shoes">
+                                            <div class="img">
+                                                {{-- <div class="col-lg-2 col-md-5 col-8 mb-lg-0 mb-md-4"> --}}
+                                                    <img src="images/about/food1.jpg" class="team-image" style="margin-bottom: -30px">
+                                                    <p><b>INDONESIA</b></p>
+                                                    {{-- </div> --}}
+                                                </div>
+                                            </div>
+                                            <div class="card-shoes">
+                                                <div class="img">
+                                                <img src="images/about/food2.jpg" class="team-image" style="margin-bottom: -30px">
+                                                <b><p>JEPANG</p></b>
+                                            </div>
+                                        </div>
+                                        <div class="card-shoes">
+                                            <div class="img">
+                                                <img src="images/about/food3.jpg" class="team-image" style="margin-bottom: -30px">
+                                                <b><p>THAILAND</p></b>
+                                            </div>
+                                        </div>
+                                        <div class="card-shoes">
+                                            <div class="img">
+                                                <img src="images/about/food3.jpg" class="team-image" style="margin-bottom: -30px">
+                                                <b><p>KOREAN</p></b>
+                                            </div>
+                                        </div>
+                                        <div class="card-shoes">
+                                            <div class="img">
+                                                <img src="images/about/food3.jpg" class="team-image" style="margin-bottom: -30px">
+                                                <b><p>KOREAN</p></b>
+                                            </div>
+                                        </div>
+                                        <div class="card-shoes">
+                                            <div class="img">
+                                                <img src="images/about/food2.jpg" class="team-image" style="margin-bottom: -30px">
+                                                <b><p>KOREAN</p></b>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -315,12 +405,12 @@
                 <div class="container">
                     <div class="row justify-content-lg-center align-items-center">
 
-                        <div class="col-lg-6 col-12">
+                        <div class="col-lg-6 col-12" >
                             <h2 class="mb-4">Kenapa Harus TopFood ?</h2>
 
-                            <p><b>Paling Cepat</b> -- Layanan antar makanan TopFood adalah yang tercepat dari semua layanan yang ada. </p>
-                            <p><b>Banyak Pilihan Menu</b> --  Mulai dari menu makanan berat hingga makanan ringan, kami sediakan untuk memuaskan rasa lapar Anda.</p>
-                            <p><b>Kemudahan Transaksi</b> --  Memesan makanan sekarang menjadi sangat mudah. Pembayaran juga bahkan lebih mudah lagi dengan adanya TopPay.</p>
+                            <p style="text-align: justify;text-justify: inter-word;"><b>Paling Cepat</b><br> -- Layanan antar makanan TopFood adalah yang tercepat dari semua layanan yang ada. </p>
+                            <p style="text-align: justify;text-justify: inter-word;"><b>Banyak Pilihan Menu</b><br> --  Mulai dari menu makanan berat hingga makanan ringan, kami sediakan untuk memuaskan rasa lapar Anda.</p>
+                            <p style="text-align: justify;text-justify: inter-word;"><b>Kemudahan Transaksi</b><br> --  Memesan makanan sekarang menjadi sangat mudah. Pembayaran juga bahkan lebih mudah lagi dengan adanya TopPay.</p>
                         </div>
 
                         <div class="col-lg-6 col-12 custom-block-wrap">
@@ -484,6 +574,46 @@
         <script src="js/modernizr.js"></script>
         <script src="js/animated-headline.js"></script>
         <script src="js/custom.js"></script>
+            <script>
+                const cardContainer = document.querySelector('.card-container');
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+                    let rafId;
+
+                    cardContainer.addEventListener('mousedown', (e) => {
+                        isDown = true;
+                        cardContainer.classList.add('active');
+                        startX = e.pageX - cardContainer.offsetLeft;
+                        scrollLeft = cardContainer.scrollLeft;
+                    });
+
+                    cardContainer.addEventListener('mouseleave', () => {
+                        isDown = false;
+                        cardContainer.classList.remove('active');
+                    });
+
+                    cardContainer.addEventListener('mouseup', () => {
+                        isDown = false;
+                        cardContainer.classList.remove('active');
+                    });
+
+                    cardContainer.addEventListener('mousemove', (e) => {
+                        if (!isDown) return;
+                        e.preventDefault();
+
+                        const x = e.pageX - cardContainer.offsetLeft;
+                        const walk = (x - startX) * 1.5;
+
+                        if (rafId) {
+                            cancelAnimationFrame(rafId);
+                        }
+
+                        rafId = requestAnimationFrame(() => {
+                            cardContainer.scrollLeft = scrollLeft - walk;
+                        });
+                    });
+                </script>
 
     </body>
 </html>

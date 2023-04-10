@@ -138,12 +138,43 @@ class HomeController extends Controller
 
     public function editRating(Request $request)
     {
-        $data = Review::updateOrCreate([
-            'id_user' => Auth::user()->id,
-            'id_menu' => $request->id,
+        $validated = $request->validate([
+            // 'id_user' => 'required',
+            'ulasan' => 'required',
+            // 'value' => 'required'
+        ]);
+    
+        $data = Review::updateOrCreate(
+            [
+                'id_user' => Auth::user()->id,
+                'id_menu' => $request->id,
             ],
-            ['value' => $request->val]
+            [
+                'value' => $request->val,
+                'ulasan' => $request->ulasan
+            ]
         );
-        return response()->json(['success'=>'Sukses memasukan rating.']);
+    
+        return response()->json(['success' => $data['id_user']]);
     }
+    
+    // public function saveText(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'id_user' => Auth::user()->id,
+    //         // 'id_menu' => $request->id,
+    //         'ulasan' => 'required',
+            
+    //     ]);
+        
+    //     $ulasan = Review::updateOrCreate(
+            
+    //         ['id_user' => Auth::user()->id,
+    //         'id_menu' => $request->id,
+    //         ],
+    //         ['value' => $request->val ,'ulasan' => $validated['ulasan']]
+    //     );
+
+    //     return redirect()->back()->with('success', 'Ulasan berhasil disimpan!');
+    // }
 }

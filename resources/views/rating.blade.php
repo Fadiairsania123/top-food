@@ -222,9 +222,16 @@
                 
                                         </div>
                                     </td>
+                                    <div style="width: inherit;height: 200px;display: grid; place-content: center">
+                                        <h4 style="text-align: center">Beri Penilaian Produk</h4>
+                                        <textarea id="ulasan" name="ulasan" placeholder="Penilaian Produk" style="width: 500px; height: 100px"></textarea>
+                                    </div>
+
                                 </tr>
                             @endforeach
                         </table>
+                        
+                          
                     </div>
                 </div>
             </div>
@@ -413,6 +420,9 @@
         </div>
     </footer>
 
+    
+        	
+
     <!-- JAVASCRIPT FILES -->
     <script src="{{ asset('') }}js/jquery.min.js"></script>
     <script src="{{ asset('') }}js/bootstrap.min.js"></script>
@@ -437,6 +447,7 @@
             $('.qty_edit').change(function() {
                 var id = $(this).data('id');
                 var qty = this.value;
+
                 $.ajax({
                     type: 'POST',
                     url: "{{ route('cart.update') }}",
@@ -453,11 +464,13 @@
             $('.rating').on('click', function(e) {
                 var val = $(this).val();
                 var id = $(this).data('id');
-
+                // var ulasan = $('#ulasan').val();
+                var formData = $('#ulasan').val();
+                console.log(formData)
                 $.ajax({
                     type:'POST',
                     url:"{{ route('rating.update') }}",
-                    data:{id:id,val:val},
+                    data:{id:id,val:val, ulasan:formData},
                     success:function(data){
                         console.log(data);
                     }
@@ -466,6 +479,32 @@
             
         })
     </script>
+    <script>
+    //     $(function() {
+    //     $('#ulasan-form').submit(function(e) {
+    //         e.preventDefault();
+
+    //         var formData = $(this).serialize();
+    //         var val = $('.rating').val();
+    //             var id = $(this).data('id');
+    //         console.log(id);
+    //         $.ajax({
+    //             url: "{{ route('ulasan.store') }}",
+    //             type: "POST",
+    //             data: {formData, val:val, id:id},
+    //             success: function(response) {
+    //                 console.log(response);
+    //                 // alert(response.message);
+    //             },
+    //             error: function(xhr) {
+    //                 console.log(xhr.responseText);
+    //                 alert("Terjadi kesalahan saat menyimpan ulasan.");
+    //             }
+    //         });
+    //     });
+    // });
+    </script>
+    
 </body>
 
 </html>
